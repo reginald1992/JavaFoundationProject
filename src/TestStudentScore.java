@@ -5,7 +5,6 @@ import java.util.Scanner;
  */
 public class TestStudentScore {
     public static void main(String[] args){
-        //rrrr
         /*1、创建Scanner的对象，并从键盘获取学生的个数
         2、根据输入的学生个数，创建对应长度的int型数组
         3、依次从键盘获取n个学生的成绩，并赋予相应的数组元素，并获取最高分
