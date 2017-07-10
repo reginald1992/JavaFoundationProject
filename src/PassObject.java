@@ -3,7 +3,6 @@
  */
 class Circle2{
     double radious;
-
     public double fineArea(){
         return Math.PI*radious*radious;
     }
