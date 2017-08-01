@@ -1,16 +1,13 @@
 /**
  * Created by shuli on 2017/7/13.
  */
-
 /**
 * 方法的参数传递（重点、难点）
  *1、形参：方法声明的时候，小括号内的参数
  *   实参：调用方法时，实际传入的参数
  *2、规则：Java中的参数传递机制：值传递机制
- * 1）形参是基本数据类型的：
+ * 1）形参是基本数据类型的：将实参的值传递给形参的基本数据类型
  * 2）形参是应用数据类型的：
- *
- *
  *
 * */
 public class TestArgsTransfer {
@@ -32,6 +29,6 @@ public class TestArgsTransfer {
         int temp=m;
         m=n;
         n=temp;
-        System.out.println("m"+m+"\t"+"n"+n);
+        System.out.println("m:"+m+"\t"+"n:"+n);
     }
 }
