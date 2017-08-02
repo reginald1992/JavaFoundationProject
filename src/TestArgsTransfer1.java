@@ -10,10 +10,10 @@ public class TestArgsTransfer1 {
         tt.swap(ds);
         System.out.println("ds.i="+ds.i+"\t"+"ds.j="+ds.j);
     }
-    public void swap(DataSwap ds){
-        int temp=ds.i;
-        ds.i=ds.j;
-        ds.j=temp;
+    public void swap(DataSwap d){
+        int temp=d.i;
+        d.i=d.j;
+        d.j=temp;
 
     }
 }
@@ -21,5 +21,4 @@ public class TestArgsTransfer1 {
 class DataSwap{
     int i=10;
     int j=5;
-
 }
