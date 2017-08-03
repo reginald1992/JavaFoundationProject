@@ -1,0 +1,24 @@
+form 江汜
+后端架构演变：
+CS：客户端模式---计算大多在本地上完成：客户端游戏
+BS：网页端模式---计算大多在服务器上完成：网页端游戏
+缓存添加
+集群
+分布式
+分布式集群
+加入消息中间件
+
+开发工具
+IDEA
+MAVEN
+GIT
+Navicat,MongoVUE
+xshell
+
+
+Javaweb开发工具
+Servlet
+SSM
+Mysql,mongodb
+Redis
+activemq

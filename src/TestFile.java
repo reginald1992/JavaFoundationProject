@@ -75,8 +75,5 @@ public class TestFile {
         System.out.println(file1.isDirectory());
         System.out.println(file1.lastModified());
         System.out.println();
-
-
-
     }
 }
