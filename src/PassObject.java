@@ -1,5 +1,6 @@
 /**
  * Created by shuli on 2017/7/9.
+ * 练习
  */
 class Circle2{
     double radious;
