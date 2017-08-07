@@ -94,7 +94,7 @@ public class ArrayUtil {
             }
         }
         else {
-        System.out.println("请输入正确的排序要求，decs为从大到小，asc为从小到大");
+        System.out.println("请输入正确的排序要求：decs为从大到小，asc为从小到大");
         }
     }
     public void swap(int[] arr,int i,int j){
