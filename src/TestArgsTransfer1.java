@@ -1,6 +1,6 @@
 /**
  * Created by shuli on 2017/7/14.
- * 可以实现值传递的正确方法
+ * 实现值传递的正确方法
  */
 public class TestArgsTransfer1 {
     public static void main(String[] args) {
