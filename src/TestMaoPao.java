@@ -41,7 +41,7 @@ public class TestMaoPao {
                 arr[i]=temp;
             }
         }
-        Arrays.sort(arr);//直接使用JDK的class
+        Arrays.sort(arr);//直接使用JDK的排序class
 
 
         System.out.println("排序以后的数组：");

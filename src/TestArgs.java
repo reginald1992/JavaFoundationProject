@@ -30,7 +30,7 @@ public class TestArgs {
     }
 
 //可变个数形参的方法
-    public void sayHello(String... args){
+    public void sayHello(String...args){
         for (int i = 0; i < args.length; i++) {
             System.out.println(args[i]);
         }
