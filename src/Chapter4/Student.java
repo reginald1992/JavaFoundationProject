@@ -30,10 +30,17 @@ public class Student extends Person{
 //    public void setAge(int age) {
 //        this.age = age;
 //    }
-//    public void eat(){
-//        System.out.println("吃饭");
-//    }
-//    public void walk(){
-//        System.out.println("走路");
-//    }
+    /**
+    * 对父类同名的方法的重写、覆盖
+    *
+    * */
+    public void eat(){
+        System.out.println("应该多吃有营养的");
+    }
+    public void walk(){
+        System.out.println("学生走路");
+    }
+    public void info(){
+        System.out.println("我是一个学生");
+    }
 }

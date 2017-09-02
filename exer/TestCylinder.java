@@ -11,5 +11,7 @@ public class TestCylinder {
         c.setLength(3);
         double area2=c.findVolume();
         System.out.println(area2);
+
+        c.findArea();
     }
 }
