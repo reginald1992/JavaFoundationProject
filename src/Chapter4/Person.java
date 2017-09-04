@@ -3,6 +3,7 @@ package Chapter4;
 public class Person {
     private String name;
     private int age;
+    int id=1001;//身份证号
 
     public String getName() {
         return name;
