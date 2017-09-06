@@ -1,9 +1,9 @@
 package exer;
 
 public class Account {
-    private int id;//账号
-    private double balance;//余额
-    private double annualInterestRate;//年利率
+    protected int id;//账号
+    protected double balance;//余额
+    protected double annualInterestRate;//年利率
 
     public Account(int id, double balance, double annualInterestRate) {
         this.id = id;
@@ -33,6 +33,10 @@ public class Account {
 
     public void setAnnualInterestRate(double annualInterestRate) {
         this.annualInterestRate = annualInterestRate;
+    }
+//返回月利率
+    public double getMonthlyInterestRate(){
+        return this.annualInterestRate/12;
     }
 
 //    取钱
