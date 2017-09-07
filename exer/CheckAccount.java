@@ -16,13 +16,16 @@ public class CheckAccount extends Account{
         super(id,init_balance,annualInterestRate);
         this.overdraft=overdraft;
     }
-
+//存在透支额度的取钱操作
     public void withdraw(double amount){
-        if(balance > amount){
+        if(balance >=amount){
             balance-=amount;
             System.out.println("成功取出："+amount+"元");
+        }else if(overdraft>=amount-balance){
+            balance=0;
+            overdraft-=(amount-balance);
         }else {
-            System.out.println("余额不足，取款失败！");
+            System.out.println("超过透支的额度");
         }
     }
 }
