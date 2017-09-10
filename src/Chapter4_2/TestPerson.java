@@ -58,5 +58,19 @@ public class TestPerson {
         }
 
     }
+//    没有多态性，那么在遇到下面这种情况，就要写三遍
+    public void show(Person p){
+
+    }
+
+    public void show(Man p){
+
+    }
+
+    public void show(Woman p){
+
+    }
 }
+
+
 
