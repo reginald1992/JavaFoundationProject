@@ -12,9 +12,19 @@ package exer;
  */
 public class CheckAccount extends Account{
     private double overdraft;//可透支额度
-    public CheckAccount(int id,double init_balance,double annualInterestRate,double overdraft){
+
+    public double getOverdraft() {
+        return overdraft;
+    }
+
+    public void setOverdraft(double overdraft) {
+        this.overdraft = overdraft;
+    }
+
+    public CheckAccount(int id, double init_balance, double annualInterestRate, double overdraft){
         super(id,init_balance,annualInterestRate);
         this.overdraft=overdraft;
+
     }
 //存在透支额度的取钱操作
     public void withdraw(double amount){
@@ -22,8 +32,8 @@ public class CheckAccount extends Account{
             balance-=amount;
             System.out.println("成功取出："+amount+"元");
         }else if(overdraft>=amount-balance){
-            balance=0;
             overdraft-=(amount-balance);
+            balance=0;
         }else {
             System.out.println("超过透支的额度");
         }
