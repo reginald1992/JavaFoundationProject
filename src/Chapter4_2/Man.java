@@ -2,6 +2,7 @@ package Chapter4_2;
 
 public class Man extends Person{
     private boolean smoking;
+    int ID = 1002;
 
     public Man() {
     }

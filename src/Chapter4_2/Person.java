@@ -3,6 +3,7 @@ package Chapter4_2;
 public class Person {
     private String name;
     private int age;
+    int ID = 1001;
 
     public Person() {
     }
