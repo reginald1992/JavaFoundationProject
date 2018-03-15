@@ -8,10 +8,7 @@ package Chapter4_2;
  * 3、程序运行分为编译和运行状态。
  *   对于多态性来说，编译时，“看左边”，将此变量引用为父类类型；
  *   运行时，“看右边”，关注于真正对象的实体：子类的对象，执行的方法是子类重写的方法
- * 4、子类对象的多态性，并不适用于属性。
- *
- *
- *
+ * 4、子类对象的多态性，并不适用于属性。属性不具有多态性。
  * */
 public class TestPerson {
     public static void main(String[] args) {
@@ -29,6 +26,7 @@ public class TestPerson {
         p1.walk();
         p1.eat();
         System.out.println("#"+p1.ID);
+//        此时执行p1.ID 输出的是1001，即person的属性，而非man的属性
 //        p1.entertainment();
 
         Person p2 = new Woman();
