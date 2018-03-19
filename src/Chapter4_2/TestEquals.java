@@ -23,7 +23,6 @@ public class TestEquals {
         String str2 = new String("AA");
         System.out.println(str1 == str2);// false
         System.out.println(str1.equals(str2));//true
-
     }
 
     public void test1(){
