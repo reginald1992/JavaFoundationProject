@@ -24,6 +24,20 @@ class Person{
         this.id = id;
         this.age = age;
     }
+//  手动实现
+//    public String toString(){
+//        return "Person name:" + name + "Person id" + id;
+//    }
+//  自动实现
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", age=" + age +
+                '}';
+    }
 }
 
 class Student extends Person{
