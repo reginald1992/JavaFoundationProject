@@ -10,6 +10,13 @@ package Chapter5_1_Day09;
  * 4、静态对象可以直接通过类.类变量的形式来调用。
  * 5、类变量的加载要早于对象。所以当有了对象以后，也可以通过“对象.类变量”来使用。但是“类.实例变量”是不行的
  * 6、静态变量、类变量是存在与静态域中的。
+ *
+ * static修饰方法（类方法）
+ * 1、随着类的加载而加载，在内存中独一份
+ * 2、可以直接通过"类.类方法"的方式来调用
+ * 3、在静态的方法内，可以调用静态的属性或静态的方法，而不能调用非静态的属性或方法。反之，非静态的方法是可以调用静态的属性或方法
+ *【静态的方法内是不可以有this、super这些关键字的！】
+ * 注：静态的结构（static的属性、方法、代码块、内部类）的生命周期要早于非静态的结构，同时被回收也要晚于非静态的结构
  * */
 public class TestSportsMan {
     public static void main(String[] args) {
@@ -20,6 +27,9 @@ public class TestSportsMan {
         System.out.println(s1);
         System.out.println(s2);
         System.out.println(SportsMan.nation);
+        s1.show1();
+        s1.show();
+        SportsMan.show();
     }
 }
 
@@ -32,6 +42,7 @@ class SportsMan{
     public SportsMan(String name, int age){
         this.name = name;
         this.age = age;
+        this.nation = "中国";
     }
 
     @Override
@@ -41,5 +52,22 @@ class SportsMan{
                 ", age=" + age +
                 ", nation='" + nation + '\'' +
                 '}';
+    }
+
+    public void show1(){
+        age = 10;
+        System.out.println("age:" + this.age);
+        System.out.println("一名来自中国的运动员");
+    }
+
+     public static void show(){
+        System.out.println("nation:" + nation);
+//        System.out.println("age:" + this.age);
+        System.out.println("一名来自中国的运动员2");
+        info();
+    }
+
+    public static void info(){
+        System.out.println("这是一个静态的方法");
     }
 }
