@@ -126,6 +126,5 @@ public class TestException1 {
         }finally {
             fis.close();
         }
-
     }
 }
