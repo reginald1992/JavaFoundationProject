@@ -7,7 +7,8 @@ package Chapter5_2_Day11;
  * ----编译时异常：在编译期间会出现的异常（执行javac.exe命令时，出现异常）
  * ----运行时异常：在运行期间会出现的异常（执行java.exe命令时，出现异常）
  * 当执行一个程序时，如果出现异常，那么异常之后的代码就不再执行
- * */
+ */
+
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -17,14 +18,14 @@ import java.util.Scanner;
 
 public class TestException {
     @Test
-    public void test1(){
+    public void test1() {
         Scanner s = new Scanner(System.in);
         int i = s.nextInt();
         System.out.println(i);
     }
 
- // 常见的运行时异常
- // 1、数组下标越界的异常：java.lang.ArrayIndexOutOfBoundsException
+    // 常见的运行时异常
+    // 1、数组下标越界的异常：java.lang.ArrayIndexOutOfBoundsException
 //    @Test
 //    public void test2(){
 //        int[] i = new int[10];
@@ -54,13 +55,13 @@ public class TestException {
 //        System.out.println(str.length());
 //    }
 
-//    编译时异常
+    //    编译时异常
     @Test
-    public void test6()throws Exception{
+    public void test6() throws Exception {
         FileInputStream fis = new FileInputStream(new File("hello.txt"));
         int b;
-        while ((b = fis.read()) != -1){
-            System.out.println((char)b);
+        while ((b = fis.read()) != -1) {
+            System.out.println((char) b);
         }
         fis.close();
     }
