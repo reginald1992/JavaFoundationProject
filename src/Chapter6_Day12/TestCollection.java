@@ -1,20 +1,62 @@
 package Chapter6_Day12;
 
 import org.junit.Test;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * 1、存储对象可以考虑：①数组；②集合
  * 2、数组存储对象的特点：Student [] stu = new Student[20]; stu[0] = 1……
  *    弊端：①一旦创建，其长度不可变。②真实的数组存放的对象个数是不可知的。
- * 3、
+ * 3、集合
+ *      Collection接口
+ *          ----------List接口：有序的，可以重复的元素
+ *              ---------------ArrayList（主要的实现类）、LinkedList、Vector
+ *          ----------Set接口：无序的，不可以重复的元素
+ *              ---------------HashSet、LinkedHashSet、TreeSet
+ *      Map接口：存储“键-值”对的数据
+ *              ---------------HashMap、LinkedHashMap、TreeMap、HashTable（子类Properties）
  * */
 public class TestCollection {
+    @Test
+    public void testCollection3(){
+        Collection coll = new ArrayList();
+        ((ArrayList) coll).add(123);
+        ((ArrayList) coll).add("AA");
+        ((ArrayList) coll).add(new Date());
+        ((ArrayList) coll).add("BB");
+        Collection coll1 = new ArrayList();
+        ((ArrayList) coll1).add(123);
+        ((ArrayList) coll1).add("AA");
+        //10.removeAll(Collection coll):从当前集合中删除包含在coll中的元素
+        coll.removeAll(coll1);
+        System.out.println(coll);
+        //11.equals（Object obj）：判断集合中的所有元素是否完全相同
+        Collection coll2 = new ArrayList();
+        ((ArrayList) coll2).add(123);
+        ((ArrayList) coll2).add("AA");
+        System.out.println(coll1.equals(coll2));
+        //12.hashCode():
+        System.out.println(coll.hashCode());
+        //13.toArray():将集合转化为数组
+        Object[] obj = coll.toArray();
+        for (int i = 0; i < obj.length; i++){
+            System.out.println(obj[i]);
+        }
+        //14.iterator():迭代器，返回一个Iterator接口实现类的对象，进而实现集合的遍历
+        //方式一：不用
+        Iterator iterator = coll.iterator();
+//        System.out.println(iterator.next());
+//        System.out.println(iterator.next());
+        //方式二：不用
+//        for (int i = 0; i < coll.size(); i++){
+//            System.out.println(iterator.next());
+//        }
+        //方式三：使用
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
     @Test
     public void testCollection2(){
         Collection coll = new ArrayList();
@@ -31,6 +73,19 @@ public class TestCollection {
         System.out.println(b1);
         boolean b2 = coll.contains(p);
         System.out.println(b2);
+        //7.containsAll（Collection coll）：判断当前集合中是否包含了coll中所有的元素
+        Collection coll1 = new ArrayList();
+        ((ArrayList) coll1).add(123);
+        ((ArrayList) coll1).add("AA");
+        boolean b3 = coll.containsAll(coll1);
+        System.out.println(b3);
+        ((ArrayList) coll).add(456);
+        //8.retainAll(Collection coll):求当前集合与coll的共有的元素，返回给当前集合
+        coll.retainAll(coll1);
+        System.out.println(coll);
+        //9.remove（Object obj）:删除集合中的object元素。若删除成功，返回true。
+        boolean b4 = coll.remove("BB");
+        System.out.println(b4);
     }
     @Test
     public void testCollection1(){
