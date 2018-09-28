@@ -11,7 +11,7 @@ import java.util.*;
  * 3、集合
  *      Collection接口
  *          ----------List接口：有序的，可以重复的元素
- *              ---------------ArrayList（主要的实现类）、LinkedList、Vector
+ *              ---------------ArrayList（主要的实现类）、LinkedList（对于频繁的插入和删除操作）、Vector（古老的实现类、线程安全的）
  *          ----------Set接口：无序的，不可以重复的元素
  *              ---------------HashSet、LinkedHashSet、TreeSet
  *      Map接口：存储“键-值”对的数据
