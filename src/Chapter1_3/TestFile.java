@@ -1,4 +1,4 @@
-/**
+package Chapter1_3; /**
  * Created by Shulin Liu on 2017/7/12 0012.
  */
 
@@ -57,7 +57,7 @@ public class TestFile {
      * */
     public void test1(){
         File file1= new File("D:\\GitHub\\JavaFoundationProject\\helloworld.txt");
-        File file2=new File("hello.txt");
+        File file2=new File("Chapter1_3/hello.txt");
 
         File file3=new File("D:\\GitHub\\JavaFoundationProject");
 

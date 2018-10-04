@@ -1,3 +1,5 @@
+package Chapter1_3;
+
 public class TestTriAngle {
     public static void main(String[] args) {
         TriAngle t = new TriAngle();

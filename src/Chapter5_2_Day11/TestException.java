@@ -13,7 +13,6 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Date;
 import java.util.Scanner;
 
 public class TestException {
@@ -60,7 +59,7 @@ public class TestException {
 
     @Test
     public void test6() throws Exception {
-        FileInputStream fis = new FileInputStream(new File("hello.txt"));
+        FileInputStream fis = new FileInputStream(new File("Chapter1_3/hello.txt"));
         int b;
         while ((b = fis.read()) != -1) {
             System.out.println((char) b);

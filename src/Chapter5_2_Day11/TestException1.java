@@ -110,7 +110,7 @@ public class TestException1 {
     public void test6() throws Exception {
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream(new File("hello.txt"));
+            fis = new FileInputStream(new File("Chapter1_3/hello.txt"));
             int b;
             while ((b = fis.read()) != -1) {
                 System.out.println((char) b);

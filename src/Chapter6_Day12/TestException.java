@@ -39,7 +39,7 @@ public class TestException {
     }
 
     public static void method1() throws FileNotFoundException, IOException {
-        FileInputStream fis = new FileInputStream(new File("hello.txt"));
+        FileInputStream fis = new FileInputStream(new File("Chapter1_3/hello.txt"));
         int b;
         while ((b = fis.read()) != -1) {
             System.out.println((char) b);
