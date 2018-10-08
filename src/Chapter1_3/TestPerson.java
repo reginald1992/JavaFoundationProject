@@ -1,4 +1,4 @@
-/**
+package Chapter1_3; /**
  * Created by Shulin Liu on 2017/7/6 0006.
  */
 /**要求：(1)创建Person类的对象，设置该对象的name、age和sex属性，调用study方法，输出字符串“studying”，调用showAge()方法显示age值，调用addAge()方法给对象的age属性值增加2岁。

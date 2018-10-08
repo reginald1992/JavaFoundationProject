@@ -1,3 +1,5 @@
+package Chapter1_3;
+
 /**类的第三个成员：构造器（constructor 构造方法）
  * constructor：建造者
  * 构造器的作用：①创建对象 ②给创建对象的属性赋值

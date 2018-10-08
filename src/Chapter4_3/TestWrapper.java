@@ -1,14 +1,11 @@
 package Chapter4_3;
 
-import org.junit.jupiter.api.Test;
-
 /**
 * 包装类：8种基本数据类型对应着一个类，此类即为包装类
  * 基本数据类型、包装类及String之间的相互转化
 * */
 public class TestWrapper {
 //    基本数据类型、包装类与String类之间的转化
-    @Test
     public void test2(){
 //        基本数据类型、包装类---》String类:调用String类的静态的重载的valueOf(XXX x)方法
         int i1 = 10;
@@ -24,7 +21,6 @@ public class TestWrapper {
 
 
 //    基本数据类型与包装类之间的转化
-    @Test
     public void test1(){
         int i = 10;
         boolean b = true;

@@ -9,14 +9,14 @@ package Chapter5_2_Day11;
  * 当执行一个程序时，如果出现异常，那么异常之后的代码就不再执行
  */
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Date;
 import java.util.Scanner;
 
 public class TestException {
+
     @Test
     public void test1() {
         Scanner s = new Scanner(System.in);
@@ -56,9 +56,10 @@ public class TestException {
 //    }
 
     //    编译时异常
+
     @Test
     public void test6() throws Exception {
-        FileInputStream fis = new FileInputStream(new File("hello.txt"));
+        FileInputStream fis = new FileInputStream(new File("Chapter1_3/hello.txt"));
         int b;
         while ((b = fis.read()) != -1) {
             System.out.println((char) b);

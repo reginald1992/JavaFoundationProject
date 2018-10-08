@@ -49,7 +49,8 @@ class Circle{
             }
         }else {
 //            手动的抛出一个异常
-            throw new Exception("传入的类型有误");
+//            throw new Exception("传入的类型有误");
+            throw new MyException("传入的类型有误");
         }
     }
 }
