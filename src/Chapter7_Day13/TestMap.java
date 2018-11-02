@@ -2,19 +2,94 @@ package Chapter7_Day13;
 
 import org.junit.Test;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 /**
  * Collection 接口：
  *
  * Map接口：
- *      |----HashMap：
- *      |----LinkedHashMap：
- *      |----TreeMap
- *      |----HashTable
- *          |----Properties：
+ *      |----HashMap：Map的主要实现类
+ *      |----LinkedHashMap：使用链表维护添加的顺序，故遍历Map时，是按照添加的顺序遍历的
+ *      |----TreeMap：按照添加进Map中的元素的Key的指定属性进行排序。要求Key是同一个类的对象！
+ *                    针对Key：自然排序  VS  定制排序
+ *      |----HashTable：古老的Map实现类、线程安全，不建议使用，不允许使用null值作为key和value
+ *          |----Properties：常用来处理属性文件。键和值都是String类型的
  * */
 public class TestMap {
+    //使用properties来处理属性文件
+    @Test
+    public void test6() throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(new File("jdbc.properties")));
+        String user = properties.getProperty("user");
+        System.out.println(user);
+        String password = properties.getProperty("password");
+        System.out.println(password);
+    }
+    //定制排序
+    @Test
+    public void test5(){
+        Comparator comparator = new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof Customer && o2 instanceof Customer){
+                    Customer c1 = (Customer)o1;
+                    Customer c2 = (Customer)o2;
+                    int i = c1.getId().compareTo(c2.getId());
+                    if (i == 0){
+                        return c1.getName().compareTo(c2.getName());
+                    }
+                    return i;
+                }
+                return 0;
+            }
+        };
+        TreeMap map = new TreeMap(comparator);
+        map.put(new Customer("AA", 1001), 87);
+        map.put(new Customer("CC", 1001), 97);
+        map.put(new Customer("BB", 1002), 77);
+        map.put(new Customer("AD", 1003), 67);
+        map.put(new Customer("BV", 1004), 87);
+        Set set = map.keySet();
+        for (Object object : set){
+            System.out.println(object + "----->" + map.get(object));
+        }
+    }
+    //自然排序
+    @Test
+    public void test4(){
+        Map map = new TreeMap();
+        map.put(new Person("SS", 26), 12);
+        map.put(new Person("AA", 25), 29);
+        map.put(new Person("SB", 26), 35);
+        map.put(new Person("VB", 35), 15);
+        map.put(new Person("BB", 18), 9);
+
+        Set set = map.keySet();
+        for (Object object : set){
+            System.out.println(object + "----->" + map.get(object));
+        }
+
+    }
+    @Test
+    public void test3(){
+        Map map = new LinkedHashMap();
+        map.put("AA", 1323);
+        map.put("BB", 12335);
+        map.put(125335, "CC");
+        map.put(null, null);
+        map.put(new Person("DSS", 23), 23685);
+        map.put(new Person("DSS", 23), 2368256);
+
+        Set set1 = map.keySet();
+        for (Object object : set1){
+            System.out.println(object + "----->" + map.get(object));
+        }
+    }
     @Test
     public void test2(){
         /**
@@ -42,9 +117,16 @@ public class TestMap {
             System.out.println(iterator.next());
         }
         //3、遍历key-value对
+        //方式一
         Set set1 = map.keySet();
         for (Object object: set1){
             System.out.println(object + "------>" + map.get(object));
+        }
+        //方式二
+        Set set2 = map.entrySet();
+        for (Object object : set2){
+            Map.Entry entry = (Map.Entry)object;
+            System.out.println(entry.getKey() + "------>" + entry.getValue());
         }
     }
     /**
