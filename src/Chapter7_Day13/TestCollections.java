@@ -3,6 +3,7 @@ package Chapter7_Day13;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -44,8 +45,8 @@ public class TestCollections {
      * 查找、替换
      * Object max(Collection)：根据元素的自然顺序，返回给定集合中的最大元素
      * Object max(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最大元素
-     * Object min(Collection)
-     * Object min(Collection，Comparator)
+     * Object min(Collection)：根据元素的自然排序，返回给定集合中的最小元素
+     * Object min(Collection，Comparator)：根据 Comparator 指定的顺序，返回给定集合中的最小元素
      * int frequency(Collection，Object)：返回指定集合中指定元素的出现次数
      * void copy(List dest,List src)：将src中的内容复制到dest中
      * boolean replaceAll(List list，Object oldVal，Object newVal)：使用新值替换 List 对象的所有旧值
@@ -60,6 +61,18 @@ public class TestCollections {
         list.add(25);
         list.add(124);
         list.add(129);
-        
+        Object object = Collections.max(list);
+        System.out.println(object);
+        System.out.println(Collections.min(list));
+        int count = Collections.frequency(list, 12900);
+        System.out.println(count);
+        //实现list的复制
+        //List list1 = new ArrayList();//错误的实现方式
+        List list1 = Arrays.asList(new Object[list.size()]);
+        Collections.copy(list1, list);
+        System.out.println(list1);
+        //通过如下的方法保证list的线程安全性
+        List list2 = Collections.synchronizedList(list);
+        System.out.println(list2);
     }
 }

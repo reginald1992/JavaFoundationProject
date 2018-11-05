@@ -68,12 +68,10 @@ public class TestMap {
         map.put(new Person("SB", 26), 35);
         map.put(new Person("VB", 35), 15);
         map.put(new Person("BB", 18), 9);
-
         Set set = map.keySet();
         for (Object object : set){
             System.out.println(object + "----->" + map.get(object));
         }
-
     }
     @Test
     public void test3(){
