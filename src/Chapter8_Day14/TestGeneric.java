@@ -10,8 +10,64 @@ import java.util.*;
  * 2.自定义泛型类、泛型接口、泛型方法
  * 3.泛型和继承的关系
  * 4.通配符
+ *
+ * 不可以在静态的方法中使用泛型
+ * 不可以在catch中使用泛型
  * */
 public class TestGeneric {
+    /**
+     * 通配符的使用
+     * */
+    @Test
+    public void test7(){
+        List<String> list = new ArrayList<>();
+        list.add("AA");
+        list.add("BB");
+        List<?> list1 = list;
+//      可以声明为通配符的集合类的对象
+        Iterator<?> iterator = list1.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+//      不允许向声明为通配符的集合类中写入对象,唯一例外的是null
+//        list1.add("CC");
+//        list1.add(123);
+        list1.add(null);
+    }
+    /**
+     * 通配符？
+     *List<A>/List<B>……都是List<?>的子类
+     *
+     * ? extends A :可以存放A及其子类
+     * ？ super A：可以存放A及其父类
+     * */
+    @Test
+    public void test6(){
+        List<?> list = null;
+        List<Object> list1 = new ArrayList<Object>();
+        List<String> list2 = new ArrayList<String>();
+        list = list1;
+        list = list2;
+
+        show(list1);
+//        show(list2);
+        show1(list2);
+        show1(list1);
+
+        List<? extends Number> list3 = null;
+        List<Integer> list4 = null;
+        list3 = list4;
+//        list3 = list1;
+        List<? super Number> list5 = null;
+        list5 = list1;
+     }
+
+    public void show(List<Object> list){
+
+    }
+
+    public void show1(List<?> list){}
+
     /**
      * 泛型与继承的关旭
      * 若类A是类B的子类，那么List<A>就不是List<B>的子接口
